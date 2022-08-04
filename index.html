@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calender</title>
+    <!-- Including css and bootstrap file -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+    <!-- Including google font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
+</head>
+
+<body style="background-color: rgb(36, 34, 34)" onload="displayLocation()">
+    <div class="container">
+        <div class="row">
+            <div class="card col-md-2 col-10 mt-5 m-auto " id="list">
+                <h5 class="mt-5">Your Added events</h5>
+                <ul id="evList">
+
+                </ul>
+            </div>
+            <div class="card col-10 m-auto mt-5 minCard"
+                style="background-color: rgb(36, 34, 34); border: 1px solid white;">
+                <div class="d-flex p-5">
+                    <div class="w-100">
+                        <select id="year" onchange="changeYear()">
+                        </select>&nbsp;&nbsp;
+                        <select id="month" onchange="changeMonth()">
+                        </select>&nbsp;&nbsp;
+                        <button style="border-radius:10px;" onclick="prevMonth()">&#10094</button>&nbsp;&nbsp;
+                        <button style="border-radius:10px;" onclick="nextMonth()">&#10095</button>
+                        <h4 class="d-block pt-3" id="calHeading"></h4>
+                    </div>
+                    <div class="bd-highlight">
+                        <h4 class="float-right" id="time"></h4>
+                        <small class="float-right" id="location"></small>
+                    </div>
+                </div>
+
+                <div class="pl-5 pr-5" id="dayCard">
+                    <div class="weekdays d-flex justify-content-around">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tues</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+
+                    <p class="days d-flex mt-3" id="days">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <h6 class="text-center text-white col-sm-12 mt-4">Design and Devenloped by <a
+                href="https://incomparable-kringle-bc1f89.netlify.app/">Yuvraj Das</a></h6>
+    </footer>
+    <!-- Including js file -->
+    <script src="./js/calender.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
