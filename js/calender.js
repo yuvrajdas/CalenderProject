@@ -1,3 +1,4 @@
+
 // Calculating time 
 
 const getTime = () => {
@@ -8,7 +9,9 @@ const getTime = () => {
 setInterval(getTime, 1000);
 
 
-
+function today() {
+    location.reload();
+}
 
 // getting user location
 const getMyLocation = async (myApi) => {
@@ -99,19 +102,19 @@ const reloadCalender = () => {
     let dates = "";
 
     for (let j = firstDayIndex; j > 0; j--) {
-        dates += `<p class="inactive">${prevDay - j + 1}</p>`;
+        dates += "<p class='inactive' data-bs-toggle='tooltip' data-bs-placement='top' title='Add Event' >" + `${prevDay - j + 1}` + "</p>";
     }
 
     for (i = 1; i <= tDysInMnth; i++) {
         if (i == new Date().getDate() && dtObj.getMonth() == new Date().getMonth() && dtObj.getFullYear() == new Date().getFullYear()) {
-            dates += "<p class='active pic'>" + i + "</p>";
+            dates += "<p class='active pic' data-bs-toggle='tooltip' data-bs-placement='top' title='Add Event'>" + i + "</p>";
         } else {
-            dates += "<p>" + i + "</p>";
+            dates += "<p data-bs-toggle='tooltip' data-bs-placement='top' title='Add Event'>" + i + "</p>";
         }
     }
 
     for (let j = 1; j <= nextDays; j++) {
-        dates += '<p class="inactive pic">' + j + '</p>';
+        dates += "<p class='inactive pic' >" + j + "</p>";
 
     }
     document.getElementById('days').innerHTML = dates;
@@ -233,4 +236,11 @@ for (item of p) {
 let liLength = getLocalStrgArrData();
 if (liLength.length < 1) {
     document.getElementById('evList').innerHTML = "<h6 >No event added...😧</h6>";
-} 
+}
+
+
+// Tooltip
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+})
