@@ -114,7 +114,7 @@ const reloadCalender = () => {
     }
 
     for (let j = 1; j <= nextDays; j++) {
-        dates += "<p class='inactive pic' >" + j + "</p>";
+        dates += "<p class='inactive pic' data-bs-toggle='tooltip' data-bs-placement='top' title='Add Event'> >" + j + "</p>";
 
     }
     document.getElementById('days').innerHTML = dates;
