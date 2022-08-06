@@ -3,7 +3,7 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
-    transition: all .2s linear;
+    transition: all .1s linear;
 } 
  
 .minCard{
@@ -64,7 +64,7 @@ li{
      font-size: 25px;
      border-radius: 90px;
      cursor: pointer;
-    opacity:0.6;
+     opacity: 0.5;
 }
 .inactive{
      /* background-color: #333431; */
@@ -100,3 +100,5 @@ button:hover{
      border-radius: 10px;
      cursor: pointer;
 }
+   
+ 
